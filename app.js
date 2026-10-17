@@ -1,136 +1,125 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-const planes =
-document.querySelectorAll(
-'input[name="plan"]'
-);
+    const planes =
+        document.querySelectorAll('input[name="plan"]');
 
-const contenidos =
-document.querySelectorAll(
-'input[name="contenido"]'
-);
+    const contenidos =
+        document.querySelectorAll('input[name="contenido"]');
 
-const quizContainer =
-document.getElementById(
-"quizContainer"
-);
+    const resumen =
+        document.getElementById("resumenPrecio");
 
-const quizLabel =
-document.getElementById(
-"quizLabel"
-);
+    function actualizarFormulario() {
 
-const resumen =
-document.getElementById(
-"resumenPrecio"
-);
+        let precio = 0;
 
-function actualizarFormulario(){
+        const plan =
+            document.querySelector(
+                'input[name="plan"]:checked'
+            );
 
-let precio = 0;
+        const contenido =
+            document.querySelector(
+                'input[name="contenido"]:checked'
+            );
 
-let planSeleccionado =
-document.querySelector(
-'input[name="plan"]:checked'
-);
+        if (!plan) {
 
-if(!planSeleccionado){
+            resumen.innerHTML =
+            `
+            <strong>
+            Seleccione un plan
+            </strong>
+            `;
 
-resumen.innerHTML =
-"Seleccione un plan";
+            return;
+        }
 
-return;
+        let nombrePlan = "";
 
-}
+        if (plan.value === "basico") {
 
-switch(planSeleccionado.value){
+            precio = 50000;
+            nombrePlan = "Plan Básico";
 
-case "basico":
+        }
 
-precio = 50000;
+        if (plan.value === "intermedio") {
 
-quizContainer.style.display =
-"none";
+            precio = 100000;
+            nombrePlan = "Plan Intermedio";
 
-break;
+        }
 
-case "intermedio":
+        if (plan.value === "avanzado") {
 
-precio = 100000;
+            precio = 150000;
+            nombrePlan = "Plan Avanzado";
 
-quizContainer.style.display =
-"block";
+        }
 
-quizLabel.innerHTML =
-"Número de Quiz (hasta 4)";
+        let recargo = 0;
 
-break;
+        if (
+            contenido &&
+            contenido.value === "origena"
+        ) {
 
-case "avanzado":
+            recargo = 30000;
+            precio += recargo;
 
-precio = 150000;
+        }
 
-quizContainer.style.display =
-"block";
+        resumen.innerHTML = `
 
-quizLabel.innerHTML =
-"Número de Quiz";
+        <h3>${nombrePlan}</h3>
 
-break;
+        <p>
+        Valor base:
+        <strong>
+        $${(precio - recargo).toLocaleString("es-CL")}
+        </strong>
+        </p>
 
-}
+        <p>
+        Diseño instruccional:
+        <strong>
+        $${recargo.toLocaleString("es-CL")}
+        </strong>
+        </p>
 
-let contenidoSeleccionado =
-document.querySelector(
-'input[name="contenido"]:checked'
-);
+        <hr>
 
-if(
-contenidoSeleccionado &&
-contenidoSeleccionado.value==="origena"
-){
+        <h2>
+        TOTAL ESTIMADO
+        </h2>
 
-precio += 30000;
+        <h1 style="color:#2E7D32;">
+        $${precio.toLocaleString("es-CL")}
+        </h1>
 
-}
+        `;
 
-resumen.innerHTML = `
+    }
 
-Plan:
-<strong>
-${planSeleccionado.value.toUpperCase()}
-</strong>
+    planes.forEach(plan => {
 
-<br><br>
+        plan.addEventListener(
+            "change",
+            actualizarFormulario
+        );
 
-Valor estimado:
+    });
 
-<strong>
-$${precio.toLocaleString("es-CL")}
-</strong>
+    contenidos.forEach(contenido => {
 
-`;
+        contenido.addEventListener(
+            "change",
+            actualizarFormulario
+        );
 
-}
+    });
 
-planes.forEach(p=>{
-
-p.addEventListener(
-"change",
-actualizarFormulario
-);
-
-});
-
-contenidos.forEach(c=>{
-
-c.addEventListener(
-"change",
-actualizarFormulario
-);
-
-});
-
-actualizarFormulario();
+    actualizarFormulario();
 
 });
