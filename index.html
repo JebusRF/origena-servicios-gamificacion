@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Origena Health Tech | Solicitud de Gamificación</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>ORIGENA HEALTH TECH</h1>
+
+<p>
+Desarrollando herramientas para una mejor atención en salud
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Solicitud de Desarrollo</h2>
+
+<label>Nombre de la actividad</label>
+<input id="actividad">
+
+<label>Institución</label>
+<input id="institucion">
+
+<label>Responsable</label>
+<input id="responsable">
+
+<label>Correo electrónico</label>
+<input id="correo">
+
+<label>Fecha de implementación</label>
+<input type="date" id="fecha">
+
+</div>
+
+<div class="card">
+
+<h2>Plan seleccionado</h2>
+
+<select id="plan">
+
+<option value="Básico">
+Básico ($50.000)
+</option>
+
+<option value="Intermedio">
+Intermedio ($100.000)
+</option>
+
+<option value="Avanzado">
+Avanzado ($150.000+)
+</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>Estructura de la experiencia</h2>
+
+<label>Número de estaciones</label>
+
+<input
+type="number"
+min="1"
+id="estaciones">
+
+<label>Preguntas por estación</label>
+
+<input
+type="number"
+min="1"
+id="preguntas">
+
+</div>
+
+<div class="card">
+
+<h2>Mecánicas deseadas</h2>
+
+<div class="checks">
+
+<label>
+<input type="checkbox" value="Ranking en vivo">
+Ranking en vivo
+</label>
+
+<label>
+<input type="checkbox" value="Ranking acumulado">
+Ranking acumulado
+</label>
+
+<label>
+<input type="checkbox" value="Insignias">
+Insignias
+</label>
+
+<label>
+<input type="checkbox" value="QR">
+Código QR
+</label>
+
+<label>
+<input type="checkbox" value="Panel docente">
+Panel docente
+</label>
+
+<label>
+<input type="checkbox" value="Informe PDF">
+Informe PDF
+</label>
+
+<label>
+<input type="checkbox" value="Certificados">
+Certificados
+</label>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Identidad visual</h2>
+
+<label>Colores institucionales</label>
+
+<input id="colores">
+
+<label>Logos/Gráficas requeridas</label>
+
+<textarea id="graficas"></textarea>
+
+</div>
+
+<div class="card">
+
+<h2>Contenidos</h2>
+
+<textarea
+id="contenidos"
+rows="6"></textarea>
+
+</div>
+
+<button onclick="generarResumen()">
+Generar resumen
+</button>
+
+<div
+id="resultado"
+class="card hidden">
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
