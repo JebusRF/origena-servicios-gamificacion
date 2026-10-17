@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Origena Health Tech | Solicitud de Gamificación</title>
+<title>Origena Health Tech</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,166 +16,251 @@
 <div class="container">
 
 <div class="header">
-    <img src="banner_deepteal.png"
-         alt="Origena Health Tech"
-         class="banner">
-</div>
+
+<img
+src="banner_deepteal.png"
+alt="Origena Health Tech"
+class="banner">
 
 </div>
+
+<div class="card intro-card">
+
+<h2>Solicita una experiencia gamificada</h2>
+
+<p>
+
+Diseñamos experiencias gamificadas personalizadas para
+instituciones educativas y de salud.
+
+Incluyen QR, ranking, cronómetro, retroalimentación,
+insignias y panel docente.
+
+</p>
+
+</div>
+
+<!-- PLANES -->
 
 <div class="card">
 
-<h2>Solicitud de Desarrollo</h2>
+<h2>Seleccione un Plan</h2>
+
+<div class="planes">
+
+<label class="plan-card">
+
+<input
+type="radio"
+name="plan"
+value="Basico">
+
+<div>
+
+<h3>🟢 PLAN BÁSICO</h3>
+
+<h4>$50.000</h4>
+
+<ul>
+<li>✅ 1 estación</li>
+<li>✅ Ranking simple</li>
+<li>✅ Código QR</li>
+<li>✅ Cronómetro</li>
+<li>✅ Retroalimentación</li>
+</ul>
+
+</div>
+
+</label>
+
+<label class="plan-card">
+
+<input
+type="radio"
+name="plan"
+value="Intermedio">
+
+<div>
+
+<h3>🟡 PLAN INTERMEDIO</h3>
+
+<h4>$100.000</h4>
+
+<ul>
+<li>✅ Hasta 4 estaciones</li>
+<li>✅ Ranking acumulado</li>
+<li>✅ Insignias</li>
+<li>✅ Panel docente</li>
+<li>✅ Código QR</li>
+</ul>
+
+</div>
+
+</label>
+
+<label class="plan-card">
+
+<input
+type="radio"
+name="plan"
+value="Avanzado">
+
+<div>
+
+<h3>🔵 PLAN AVANZADO</h3>
+
+<h4>Desde $150.000</h4>
+
+<ul>
+<li>✅ Estaciones ilimitadas</li>
+<li>✅ Ranking acumulado</li>
+<li>✅ Panel docente</li>
+<li>✅ Informe PDF</li>
+<li>✅ Certificados</li>
+<li>✅ Exportación de resultados</li>
+</ul>
+
+</div>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- DATOS -->
+
+<div class="card">
+
+<h2>Información General</h2>
 
 <label>Nombre de la actividad</label>
-<input id="actividad">
+<input>
 
 <label>Institución</label>
-<input id="institucion">
+<input>
 
 <label>Responsable</label>
-<input id="responsable">
+<input>
 
 <label>Correo electrónico</label>
-<input id="correo">
+<input>
 
 <label>Fecha de implementación</label>
-<input type="date" id="fecha">
+<input type="date">
 
 </div>
 
+<!-- ESTRUCTURA -->
+
 <div class="card">
 
-<h2>Plan seleccionado</h2>
+<h2>Estructura de la Experiencia</h2>
 
-<select id="plan">
+<label>Número de estaciones</label>
+<input type="number">
 
-<option value="Básico">
-Básico ($50.000)
-</option>
+<label>Preguntas por estación</label>
+<input type="number">
 
-<option value="Intermedio">
-Intermedio ($100.000)
-</option>
+<label>Alternativas por pregunta</label>
 
-<option value="Avanzado">
-Avanzado ($150.000+)
-</option>
+<select>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>Variable</option>
+</select>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="card">
+
+<h2>Desarrollo de Preguntas</h2>
+
+<label>
+
+<input type="radio" name="contenido">
+
+Cliente proporciona preguntas
+
+</label>
+
+<label>
+
+<input type="radio" name="contenido">
+
+Trabajo colaborativo
+
+</label>
+
+<label>
+
+<input type="radio" name="contenido">
+
+Origena Health Tech desarrolla las preguntas
+(+ $30.000 CLP)
+
+</label>
+
+</div>
+
+<!-- VISUAL -->
+
+<div class="card">
+
+<h2>Identidad Visual</h2>
+
+<label>Colores institucionales</label>
+<input>
+
+<label>Logos o elementos gráficos</label>
+<textarea rows="4"></textarea>
+
+</div>
+
+<!-- PLAZOS -->
+
+<div class="card">
+
+<h2>Plazos</h2>
+
+<label>Anticipación requerida</label>
+
+<select>
+
+<option>7 días</option>
+<option>14 días</option>
+<option>21 días</option>
+<option>30 días</option>
 
 </select>
 
 </div>
 
-<div class="card">
-
-<h2>Estructura de la experiencia</h2>
-
-<label>Número de estaciones</label>
-
-<input
-type="number"
-min="1"
-id="estaciones">
-
-<label>Preguntas por estación</label>
-
-<input
-type="number"
-min="1"
-id="preguntas">
-
-</div>
+<!-- POSTVENTA -->
 
 <div class="card">
 
-<h2>Mecánicas deseadas</h2>
+<h2>Postventa Incluida</h2>
 
-<div class="checks">
+<ul>
 
-<label>
-<input type="checkbox" value="Ranking en vivo">
-Ranking en vivo
-</label>
+<li>✅ Soporte S.O.S. el día de implementación</li>
 
-<label>
-<input type="checkbox" value="Ranking acumulado">
-Ranking acumulado
-</label>
+<li>✅ Correcciones menores posteriores a la entrega</li>
 
-<label>
-<input type="checkbox" value="Insignias">
-Insignias
-</label>
+<li>❌ Rediseño completo posterior a aprobación</li>
 
-<label>
-<input type="checkbox" value="QR">
-Código QR
-</label>
+<li>❌ Nuevas estaciones no consideradas inicialmente</li>
 
-<label>
-<input type="checkbox" value="Panel docente">
-Panel docente
-</label>
-
-<label>
-<input type="checkbox" value="Informe PDF">
-Informe PDF
-</label>
-
-<label>
-<input type="checkbox" value="Certificados">
-Certificados
-</label>
+</ul>
 
 </div>
 
 </div>
 
-<div class="card">
-
-<h2>Identidad visual</h2>
-
-<label>Colores institucionales</label>
-
-<input id="colores">
-
-<label>Logos/Gráficas requeridas</label>
-
-<textarea id="graficas"></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Contenidos</h2>
-
-<textarea
-id="contenidos"
-rows="6"></textarea>
-
-</div>
-
-<button onclick="generarResumen()">
-Generar resumen
-</button>
-
-<div
-id="resultado"
-class="card hidden">
-</div>
-
-<script src="app.js"></script>
-
-<div class="card">
-
-<p style="text-align:center; font-size:18px;">
-
-Diseñamos experiencias gamificadas personalizadas
-con rankings en tiempo real, QR, insignias y panel docente.
-
-</p>
-
-</div>
-    
 </body>
 </html>
