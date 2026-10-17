@@ -48,46 +48,30 @@ insignias y panel docente.
 
 <div class="planes">
 
-<label class="plan-card">
-
-<input
-type="radio"
-name="plan"
-value="Basico">
-
-<div>
+<div class="plan-card" data-plan="basico">
 
 <h3>🟢 PLAN BÁSICO</h3>
 
-<h4>$50.000</h4>
+<h4>$50.000 CLP</h4>
 
 <ul>
-<li>✅ 1 estación</li>
+<li>✅ 1 Quiz</li>
 <li>✅ Ranking simple</li>
 <li>✅ Código QR</li>
 <li>✅ Cronómetro</li>
-<li>✅ Retroalimentación</li>
+<li>✅ Retroalimentación inmediata</li>
 </ul>
 
 </div>
 
-</label>
-
-<label class="plan-card">
-
-<input
-type="radio"
-name="plan"
-value="Intermedio">
-
-<div>
+<div class="plan-card" data-plan="intermedio">
 
 <h3>🟡 PLAN INTERMEDIO</h3>
 
-<h4>$100.000</h4>
+<h4>$100.000 CLP</h4>
 
 <ul>
-<li>✅ Hasta 4 estaciones</li>
+<li>✅ Hasta 4 Quiz</li>
 <li>✅ Ranking acumulado</li>
 <li>✅ Insignias</li>
 <li>✅ Panel docente</li>
@@ -96,23 +80,14 @@ value="Intermedio">
 
 </div>
 
-</label>
-
-<label class="plan-card">
-
-<input
-type="radio"
-name="plan"
-value="Avanzado">
-
-<div>
+<div class="plan-card" data-plan="avanzado">
 
 <h3>🔵 PLAN AVANZADO</h3>
 
-<h4>Desde $150.000</h4>
+<h4>Desde $150.000 CLP</h4>
 
 <ul>
-<li>✅ Estaciones ilimitadas</li>
+<li>✅ Quiz ilimitados</li>
 <li>✅ Ranking acumulado</li>
 <li>✅ Panel docente</li>
 <li>✅ Informe PDF</li>
@@ -121,8 +96,6 @@ value="Avanzado">
 </ul>
 
 </div>
-
-</label>
 
 </div>
 
@@ -157,19 +130,21 @@ value="Avanzado">
 
 <h2>Estructura de la Experiencia</h2>
 
-<label>Número de estaciones</label>
-<input type="number">
+<label>Número de Quiz</label>
+<input type="number" min="1">
 
-<label>Preguntas por estación</label>
-<input type="number">
+<label>Preguntas por Quiz</label>
+<input type="number" min="1">
 
 <label>Alternativas por pregunta</label>
 
 <select>
-<option>3</option>
-<option>4</option>
-<option>5</option>
+
+<option>3 alternativas</option>
+<option>4 alternativas</option>
+<option>5 alternativas</option>
 <option>Variable</option>
+
 </select>
 
 </div>
@@ -180,30 +155,47 @@ value="Avanzado">
 
 <h2>Desarrollo de Preguntas</h2>
 
-<label>
+<div class="desarrollo-opciones">
 
-<input type="radio" name="contenido">
+<div class="contenido-card">
 
-Cliente proporciona preguntas
+<h3>👤 Cliente</h3>
 
-</label>
+<p>
+Proporciona todas las preguntas y alternativas.
+</p>
 
-<label>
+</div>
 
-<input type="radio" name="contenido">
+<div class="contenido-card">
 
-Trabajo colaborativo
+<h3>🤝 Trabajo Colaborativo</h3>
 
-</label>
+<p>
+El cliente aporta contenidos y Origena Health Tech los adapta.
+</p>
 
-<label>
+</div>
 
-<input type="radio" name="contenido">
+<div class="contenido-card destacada">
 
-Origena Health Tech desarrolla las preguntas
-(+ $30.000 CLP)
+<h3>🧠 Origena Health Tech</h3>
 
-</label>
+<p>
+
+Diseño completo del banco de preguntas.
+
+</p>
+
+<strong>
+
++$30.000 CLP
+
+</strong>
+
+</div>
+
+</div>
 
 </div>
 
