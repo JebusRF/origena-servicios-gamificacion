@@ -291,3 +291,27 @@ grid-template-columns:1fr;
 }
 
 }
+.contenido-card input{
+
+display:none;
+
+}
+
+.contenido-card input:checked + div{
+
+border:3px solid #2E7D32;
+
+background:#F3FFF5;
+
+}
+
+#resumenPrecio{
+
+font-size:22px;
+font-weight:bold;
+
+color:#0D4558;
+
+line-height:1.8;
+
+}
