@@ -1,101 +1,136 @@
-function generarResumen(){
+document.addEventListener("DOMContentLoaded",()=>{
 
-const actividad =
-document.getElementById("actividad").value;
-
-const institucion =
-document.getElementById("institucion").value;
-
-const responsable =
-document.getElementById("responsable").value;
-
-const correo =
-document.getElementById("correo").value;
-
-const fecha =
-document.getElementById("fecha").value;
-
-const plan =
-document.getElementById("plan").value;
-
-const estaciones =
-document.getElementById("estaciones").value;
-
-const preguntas =
-document.getElementById("preguntas").value;
-
-const colores =
-document.getElementById("colores").value;
-
-const graficas =
-document.getElementById("graficas").value;
+const planes =
+document.querySelectorAll(
+'input[name="plan"]'
+);
 
 const contenidos =
-document.getElementById("contenidos").value;
-
-const checks =
 document.querySelectorAll(
-'input[type="checkbox"]:checked'
+'input[name="contenido"]'
 );
 
-let funcionalidades=[];
-
-checks.forEach(c=>{
-
-funcionalidades.push(
-c.value
+const quizContainer =
+document.getElementById(
+"quizContainer"
 );
 
-});
+const quizLabel =
+document.getElementById(
+"quizLabel"
+);
 
-const resumen = `
+const resumen =
+document.getElementById(
+"resumenPrecio"
+);
 
-<h2>Resumen de Solicitud</h2>
+function actualizarFormulario(){
 
-<p><b>Actividad:</b> ${actividad}</p>
+let precio = 0;
 
-<p><b>Institución:</b> ${institucion}</p>
+let planSeleccionado =
+document.querySelector(
+'input[name="plan"]:checked'
+);
 
-<p><b>Responsable:</b> ${responsable}</p>
+if(!planSeleccionado){
 
-<p><b>Correo:</b> ${correo}</p>
+resumen.innerHTML =
+"Seleccione un plan";
 
-<p><b>Fecha:</b> ${fecha}</p>
+return;
 
-<p><b>Plan:</b> ${plan}</p>
+}
 
-<p><b>Estaciones:</b> ${estaciones}</p>
+switch(planSeleccionado.value){
 
-<p><b>Preguntas por estación:</b> ${preguntas}</p>
+case "basico":
 
-<p><b>Funcionalidades:</b>
-${funcionalidades.join(", ")}
-</p>
+precio = 50000;
 
-<p><b>Colores institucionales:</b>
-${colores}
-</p>
+quizContainer.style.display =
+"none";
 
-<p><b>Gráficas:</b>
-${graficas}
-</p>
+break;
 
-<p><b>Contenidos:</b>
-${contenidos}
-</p>
+case "intermedio":
+
+precio = 100000;
+
+quizContainer.style.display =
+"block";
+
+quizLabel.innerHTML =
+"Número de Quiz (hasta 4)";
+
+break;
+
+case "avanzado":
+
+precio = 150000;
+
+quizContainer.style.display =
+"block";
+
+quizLabel.innerHTML =
+"Número de Quiz";
+
+break;
+
+}
+
+let contenidoSeleccionado =
+document.querySelector(
+'input[name="contenido"]:checked'
+);
+
+if(
+contenidoSeleccionado &&
+contenidoSeleccionado.value==="origena"
+){
+
+precio += 30000;
+
+}
+
+resumen.innerHTML = `
+
+Plan:
+<strong>
+${planSeleccionado.value.toUpperCase()}
+</strong>
+
+<br><br>
+
+Valor estimado:
+
+<strong>
+$${precio.toLocaleString("es-CL")}
+</strong>
 
 `;
 
-const div =
-document.getElementById("resultado");
+}
 
-div.innerHTML=resumen;
+planes.forEach(p=>{
 
-div.classList.remove("hidden");
+p.addEventListener(
+"change",
+actualizarFormulario
+);
 
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
 });
 
-}
+contenidos.forEach(c=>{
+
+c.addEventListener(
+"change",
+actualizarFormulario
+);
+
+});
+
+actualizarFormulario();
+
+});
