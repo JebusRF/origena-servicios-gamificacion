@@ -162,8 +162,18 @@ insignias y panel docente.
 
 <h2>Estructura de la Experiencia</h2>
 
-<label>Número de Quiz</label>
-<input type="number" min="1">
+<div id="quizContainer">
+
+<label id="quizLabel">
+Número de Quiz
+</label>
+
+<input
+id="numeroQuiz"
+type="number"
+min="1">
+
+</div>
 
 <label>Preguntas por Quiz</label>
 <input type="number" min="1">
@@ -189,7 +199,14 @@ insignias y panel docente.
 
 <div class="desarrollo-opciones">
 
-<div class="contenido-card">
+<label class="contenido-card">
+
+<input
+type="radio"
+name="contenido"
+value="cliente">
+
+<div>
 
 <h3>👤 Cliente</h3>
 
@@ -199,33 +216,54 @@ Proporciona todas las preguntas y alternativas.
 
 </div>
 
-<div class="contenido-card">
+</label>
 
-<h3>🤝 Trabajo Colaborativo</h3>
+<label class="contenido-card">
+
+<input
+type="radio"
+name="contenido"
+value="colaborativo">
+
+<div>
+
+<h3>🤝 Trabajo colaborativo</h3>
 
 <p>
-El cliente aporta contenidos y Origena Health Tech los adapta.
+Cliente y Origena trabajan conjuntamente.
 </p>
 
 </div>
 
-<div class="contenido-card destacada">
+</label>
+
+<label class="contenido-card">
+
+<input
+type="radio"
+name="contenido"
+value="origena">
+
+<div>
 
 <h3>🧠 Origena Health Tech</h3>
 
 <p>
 
-Diseño completo del banco de preguntas.
+Diseño completo de preguntas,
+alternativas y retroalimentación.
 
 </p>
 
 <strong>
 
-+$30.000 CLP
++ $30.000 CLP
 
 </strong>
 
 </div>
+
+</label>
 
 </div>
 
